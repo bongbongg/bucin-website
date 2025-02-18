@@ -1,31 +1,50 @@
-document.querySelectorAll(".cintaButton").forEach(button => {
-  button.addEventListener("click", function() {
-    // Play background music when the page loads
-    const backgroundMusic = document.getElementById("backgroundMusic");
-    if (backgroundMusic.paused) {
-      backgroundMusic.play();
-    }
+document.getElementById("bukaHadiahButton").addEventListener("click", function() {
+  document.getElementById("hadiah").style.display = "block";
+  document.getElementById("memori").style.display = "none";
+  document.getElementById("chest").style.display = "none";
+  document.getElementById("pesanPesan").style.display = "none";
+});
 
-    const result = Math.random();
-    let message = "";
+document.getElementById("bukaMemoriButton").addEventListener("click", function() {
+  document.getElementById("hadiah").style.display = "none";
+  document.getElementById("memori").style.display = "block";
+  document.getElementById("chest").style.display = "none";
+  document.getElementById("pesanPesan").style.display = "none";
+});
 
-    if (result > 0.5) {
-      message = "Kamu jatuh cinta! 💖";
+document.getElementById("bukaChestButton").addEventListener("click", function() {
+  document.getElementById("hadiah").style.display = "none";
+  document.getElementById("memori").style.display = "none";
+  document.getElementById("chest").style.display = "block";
+  document.getElementById("pesanPesan").style.display = "none";
+});
+
+document.getElementById("pesanPesanButton").addEventListener("click", function() {
+  document.getElementById("hadiah").style.display = "none";
+  document.getElementById("memori").style.display = "none";
+  document.getElementById("chest").style.display = "none";
+  document.getElementById("pesanPesan").style.display = "block";
+});
+
+// Gift box functionality (only 1 can be opened)
+let openedGift = false;
+document.querySelectorAll(".gift-box").forEach(gift => {
+  gift.addEventListener("click", function() {
+    if (!openedGift) {
+      alert("Selamat! Kamu membuka hadiah!");
+      openedGift = true;
+      this.disabled = true;
     } else {
-      message = "Cinta kamu masih di ujung sana! 💔";
+      alert("Hadiah sudah dibuka!");
     }
+  });
+});
 
-    // Show love animation and result
-    document.getElementById("hasilCinta").style.display = "block";
-    document.getElementById("hasilCinta").textContent = message;
-    document.getElementById("loveAnimation").style.display = "block";
-
-    // Play sound effect for fun
-    const audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
-    audio.play();
-    
-    // Create heart emoji animation
-    const loveEmoji = document.getElementById("loveEmoji");
-    loveEmoji.innerHTML = "❤️💖💘";
+// Chest functionality (random discount)
+document.querySelectorAll(".chest").forEach(chest => {
+  chest.addEventListener("click", function() {
+    let discount = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
+    alert("Selamat! Kamu mendapatkan potongan harga: Rp " + discount);
+    this.disabled = true;
   });
 });

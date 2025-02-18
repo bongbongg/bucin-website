@@ -7,30 +7,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio id="backgroundMusic" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+  <!-- Musik otomatis diputar saat halaman dimuat -->
+  <audio autoplay loop>
+    <source src="path_to_your_song.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
   <header>
     <h1>Selamat datang di Website Bucin!</h1>
-    <p>Siap untuk jatuh cinta? <span id="loveEmoji">❤️</span></p>
+    <p>Apakah kamu siap untuk jatuh cinta?</p>
   </header>
-  <main>
-    <div class="button-container">
-      <button class="cintaButton">Cek Cinta Kamu!</button>
-      <button class="cintaButton">Cinta Datang Tanpa Diduga</button>
-      <button class="cintaButton">Lihat Cinta Di Ujung Sana</button>
+
+  <div class="button-container">
+    <button id="bukaHadiahButton">Buka Hadiah</button>
+    <button id="bukaMemoriButton">Buka Memori</button>
+    <button id="bukaChestButton">Buka Chest</button>
+    <button id="pesanPesanButton">Pesan-Pesan</button>
+  </div>
+
+  <!-- Konten dinamis untuk setiap tombol -->
+  <div id="hadiah" class="content">
+    <div class="gift-container">
+      <div class="gift-box">Hadiah 1</div>
+      <div class="gift-box">Hadiah 2</div>
+      <div class="gift-box">Hadiah 3</div>
     </div>
-    <p id="hasilCinta" style="display: none;"></p>
-    <div id="loveAnimation" style="display: none;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Heart_animation.gif" alt="Love Animation" class="love-gif">
+  </div>
+
+  <div id="memori" class="content">
+    <div class="memory-container">
+      <img src="memory1.jpg" class="memory-image" alt="Memory 1">
+      <img src="memory2.jpg" class="memory-image" alt="Memory 2">
+      <img src="memory3.jpg" class="memory-image" alt="Memory 3">
     </div>
-  </main>
+  </div>
+
+  <div id="chest" class="content">
+    <div class="chest-container">
+      <div class="chest">Chest 1 - Potongan Rp1000</div>
+      <div class="chest">Chest 2 - Potongan Rp2000</div>
+      <div class="chest">Chest 3 - Potongan Rp3000</div>
+    </div>
+  </div>
+
+  <div id="pesanPesan" class="content">
+    <p>Aku sayang kamu</p>
+    <p>Ilove you</p>
+    <p>Kamu adalah yang terbaik</p>
+  </div>
+
   <footer>
-    <p>Created by <a href="https://t.me/ndeeso" target="_blank">@BongBong</a> | Store @ <a href="https://t.me/bulol_needs" target="_blank">@Bulol_Needs</a></p>
+    <p>Created by <a href="https://t.me/ndeeso" target="_blank">@BongBong</a> and <a href="https://t.me/bulol_needs" target="_blank">@Bulol_Needs</a></p>
   </footer>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
