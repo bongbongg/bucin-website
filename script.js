@@ -1,70 +1,56 @@
-// Fungsi untuk menampilkan konten dan tombol kembali
-function showContent(contentId) {
-  document.getElementById("hadiah").style.display = "none";
-  document.getElementById("memori").style.display = "none";
-  document.getElementById("chest").style.display = "none";
-  document.getElementById("pesanPesan").style.display = "none";
-  document.getElementById(contentId).style.display = "block";
+document.getElementById("cekButton").addEventListener("click", function() {
+  let cowok = document.getElementById("cowok").value;
+  let cewek = document.getElementById("cewek").value;
 
-  // Menyembunyikan tombol utama dan menampilkan tombol kembali
-  document.querySelectorAll('.button-container button').forEach(button => button.style.display = "none");
-  document.getElementById('backButton').style.display = "block";
-}
-
-// Menampilkan kembali tombol utama saat tombol kembali ditekan
-document.getElementById("backButton").addEventListener("click", function() {
-  document.getElementById('backButton').style.display = "none";
-  document.querySelectorAll('.button-container button').forEach(button => button.style.display = "block");
+  if (cowok && cewek) {
+      let hasil = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("hasil").innerHTML = `<h2>Kecocokan Cinta: ${hasil}%</h2>`;
+  } else {
+      alert("Masukkan nama kedua belah pihak terlebih dahulu!");
+  }
 });
 
-// Menangani klik pada tombol utama
-document.getElementById("bukaHadiahButton").addEventListener("click", function() {
-  showContent("hadiah");
+document.getElementById("cekButton").addEventListener("click", function() {
+  let cowok = document.getElementById("cowok").value;
+  let cewek = document.getElementById("cewek").value;
+
+  if (cowok && cewek) {
+      let hasil = Math.floor(Math.random() * 100) + 1;
+      
+      // Simpan hasil kecocokan di sessionStorage dan arahkan ke halaman baru
+      sessionStorage.setItem('hasil', hasil);
+      window.location.href = 'result.html'; // Arahkan ke halaman hasil
+  } else {
+      alert("Masukkan nama kedua belah pihak terlebih dahulu!");
+  }
 });
 
-document.getElementById("bukaMemoriButton").addEventListener("click", function() {
-  showContent("memori");
-});
+// Script untuk halaman hasil (result.html)
+window.onload = function() {
+  let hasil = sessionStorage.getItem('hasil');
+  if (hasil) {
+      let progress = document.querySelector(".circle .progress");
+      let percentText = document.querySelector(".circle .percent");
+      let resultMessage = document.getElementById("resultMessage");
 
-document.getElementById("bukaChestButton").addEventListener("click", function() {
-  showContent("chest");
-});
+      // Update progress dan persen
+      setTimeout(() => {
+          progress.style.background = `conic-gradient(#ff0033 0% ${hasil}%, #fbc7d5 ${hasil}% 100%)`;
+          percentText.textContent = `${hasil}%`;
 
-document.getElementById("pesanPesanButton").addEventListener("click", function() {
-  showContent("pesanPesan");
-});
+          // Menampilkan pesan berdasarkan hasil kecocokan
+          if (hasil >= 50) {
+              resultMessage.textContent = "Selamat, kecocokan Anda tinggi!";
+              resultMessage.style.color = "#4CAF50"; // Hijau untuk hasil baik
+          } else {
+              resultMessage.textContent = "Maaf, kecocokan Anda rendah.";
+              resultMessage.style.color = "#f44336"; // Merah untuk hasil rendah
+          }
+      }, 500);
+  }
 
-// Fungsionalitas hadiah dengan hadiah acak
-let openedGift = false;
-const gifts = [
-  "💖 Ciuman virtual dari Bulol! 😘",
-  "🌹 Bunga indah untukmu, Bulol! 💐",
-  "🎶 Lagu cinta yang dipersembahkan oleh Bulol! 💘",
-  "🍫 Cokelat manis dari Bulol! 🍬",
-  "🐱 Pelukan dari Bulol si kucing lucu! 😻",
-  "🌟 Stiker Bulol yang unik dan cantik! ✨"
-];
-
-document.querySelectorAll(".gift-box").forEach(gift => {
-  gift.addEventListener("click", function() {
-    if (!openedGift) {
-      let randomGift = gifts[Math.floor(Math.random() * gifts.length)];
-      alert("🎉 Wah, kamu membuka hadiah pertama! Hadiahmu adalah: " + randomGift);
-      openedGift = true;
-      this.disabled = true;
-    } else {
-      alert("Oups, kamu sudah membuka hadiah ini. 😜");
-    }
+  // Fungsi untuk kembali ke halaman utama
+  document.getElementById("backButton").addEventListener("click", function() {
+      window.location.href = 'index.html';
   });
-});
-
-
-// Fungsionalitas chest dengan persentase cinta
-document.querySelectorAll(".chest").forEach(chest => {
-  chest.addEventListener("click", function() {
-    let lovePercentage = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-    alert("Selamat! Kamu mendapatkan " + lovePercentage + "% cinta untuk melanjutkan perjalanan cintamu. 💖");
-    this.disabled = true;
-  });
-});
-
+};

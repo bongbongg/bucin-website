@@ -1,113 +1,136 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  background-color: #f9c7d9;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #ffb6c1, #ff77b3);
-  color: white;
+  color: #fff;
   text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   padding: 0;
-  overflow-y: auto;
+  margin: 0;
 }
 
 header {
+  background-color: #fbb8c4;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.form-container {
+  background-color: #fbc7d5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
   width: 100%;
-  background-color: rgba(255, 105, 180, 0.8);
-  color: white;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
 }
 
 button {
-  padding: 20px 40px;
-  font-size: 18px;
-  background-color: #ff1493;
-  color: white;
+  padding: 10px 20px;
+  background-color: #ff7e8e;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
   cursor: pointer;
-  margin: 15px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #ff69b4;
-  transform: scale(1.1);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.back-button {
-  position: absolute;
-  left: 20px;
-  bottom: 10px;
-  background-color: #ff1493;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  display: none;
-}
-
-.content {
-  display: none;
-}
-
-.gift-container, .chest-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.gift-box, .chest {
-  background-color: #ff69b4;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
+  background-color: #ff5577;
 }
 
 footer {
-  font-size: 16px;
-  padding: 20px;
-  background-color: #333;
-  color: white;
+  background-color: #fbb8c4;
+  padding: 15px;
+  margin-top: 30px;
 }
 
-footer a {
-  color: #ff69b4;
-  text-decoration: none;
+footer p {
+  font-size: 18px;
+  color: #fff;
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* New page for results */
+.result-page {
+  background-color: #f9c7d9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.circle-container {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 15px solid #fbc7d5;
+  position: relative;
+}
+
+.circle .progress {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#ff0033 0% 50%, #fbc7d5 50% 100%);
+  position: absolute;
+  clip: rect(0, 200px, 200px, 100px);
+}
+
+.circle .percent {
+  position: absolute;
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff0033;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Menambahkan sedikit styling untuk pesan */
+.message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Styling untuk tombol kembali */
+button {
+  padding: 10px 20px;
+  background-color: #ff7e8e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #ff5577;
+}
+

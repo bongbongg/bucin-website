@@ -1,68 +1,34 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Bucin</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kekuatan Cinta</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Musik otomatis diputar saat halaman dimuat -->
-  <audio autoplay loop>
-    <source src="path_to_your_soothing_song.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+    <header>
+        <h1>Cek Berapa Persen Kekuatan Cinta Kalian</h1>
+    </header>
 
-  <header>
-    <h1>Selamat datang di Website Bucin!</h1>
-    <p>Apakah kamu siap untuk jatuh cinta?</p>
-  </header>
+    <main>
+        <div class="form-container">
+            <label for="cowok">Nama Cowok:</label>
+            <input type="text" id="cowok" placeholder="Nama Cowok" />
+            <label for="cewek">Nama Cewek:</label>
+            <input type="text" id="cewek" placeholder="Nama Cewek" />
+            <button id="cekButton">Cek Kecocokan</button>
+        </div>
+    </main>
 
-  <div class="button-container">
-    <button id="bukaHadiahButton">Buka Hadiah</button>
-    <button id="bukaMemoriButton">Buka Memori</button>
-    <button id="bukaChestButton">Buka Chest</button>
-    <button id="pesanPesanButton">Pesan-Pesan</button>
-  </div>
+    <footer>
+        <p>Created by @BongBong and @Bulol_Needs</p>
+    </footer>
 
-  <!-- Tombol kembali -->
-  <button id="backButton" class="back-button" style="display:none;">Kembali</button>
+    <audio autoplay loop>
+        <source src="bucin-lagu.mp3" type="audio/mp3">
+    </audio>
 
-  <!-- Konten dinamis untuk setiap tombol -->
-  <div id="hadiah" class="content">
-    <div class="gift-container">
-      <div class="gift-box">Hadiah 1</div>
-      <div class="gift-box">Hadiah 2</div>
-      <div class="gift-box">Hadiah 3</div>
-    </div>
-  </div>
-
-  <div id="memori" class="content">
-    <div class="memory-container">
-      <img src="memory1.jpg" class="memory-image" alt="Memory 1">
-      <img src="memory2.jpg" class="memory-image" alt="Memory 2">
-      <img src="memory3.jpg" class="memory-image" alt="Memory 3">
-    </div>
-  </div>
-
-  <div id="chest" class="content">
-    <div class="chest-container">
-      <div class="chest">Chest 1 </div>
-      <div class="chest">Chest 2 </div>
-      <div class="chest">Chest 3 </div>
-    </div>
-  </div>
-
-  <div id="pesanPesan" class="content">
-    <p>Aku sayang kamu</p>
-    <p>Ilove you</p>
-    <p>Kamu adalah yang terbaik</p>
-  </div>
-
-  <footer>
-    <p>Created by <a href="https://t.me/ndeeso" target="_blank">@BongBong</a> and <a href="https://t.me/bulol_needs" target="_blank">@Bulol_Needs</a></p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
