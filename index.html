@@ -7,15 +7,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <audio id="backgroundMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
   <header>
     <h1>Selamat datang di Website Bucin!</h1>
-    <p>Apakah kamu siap untuk jatuh cinta?</p>
+    <p>Siap untuk jatuh cinta? <span id="loveEmoji">❤️</span></p>
   </header>
   <main>
-    <button id="cintaButton">Cek Cinta Kamu!</button>
+    <div class="button-container">
+      <button class="cintaButton">Cek Cinta Kamu!</button>
+      <button class="cintaButton">Cinta Datang Tanpa Diduga</button>
+      <button class="cintaButton">Lihat Cinta Di Ujung Sana</button>
+    </div>
     <p id="hasilCinta" style="display: none;"></p>
+    <div id="loveAnimation" style="display: none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Heart_animation.gif" alt="Love Animation" class="love-gif">
+    </div>
   </main>
+  <footer>
+    <p>Created by <a href="https://t.me/ndeeso" target="_blank">@BongBong</a> | Store @ <a href="https://t.me/bulol_needs" target="_blank">@Bulol_Needs</a></p>
+  </footer>
+  
   <script src="script.js"></script>
 </body>
 </html>
-
